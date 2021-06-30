@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="de.thro.vv.studienarbeit.automat.AutomatTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-04T18:02:32" hostname="DESKTOP-20L75DO" time="0.286">
+  <properties/>
+  <testcase name="testAutomat()" classname="de.thro.vv.studienarbeit.automat.AutomatTest" time="0.286"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

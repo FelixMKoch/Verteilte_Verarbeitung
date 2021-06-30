@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="de.thro.vv.studienarbeit.logging.LogConfTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-04T18:02:33" hostname="DESKTOP-20L75DO" time="0.255">
+  <properties/>
+  <testcase name="startLogger()" classname="de.thro.vv.studienarbeit.logging.LogConfTest" time="0.255"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[2021-05-04 20:02:33 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation Programm startet
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation Java: C:\Program Files\Java\jdk-13.0.2
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation Username: Felix
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation Operating System: Windows_NT
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation PORT: 1024
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation Log-File: information
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation Json-File: json-file
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation Log-Level: INFO
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation Programm startet
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation Java: C:\Program Files\Java\jdk-13.0.2
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation Username: Felix
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation Operating System: Windows_NT
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation PORT: 1024
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation Log-File: information
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation Json-File: json-file
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.logging.LogConf loggerStartInformation Log-Level: INFO
+]]></system-err>
+</testsuite>

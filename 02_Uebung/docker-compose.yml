@@ -1,0 +1,104 @@
+version: '3'
+
+services:
+
+  sql-server:
+    networks:
+      - localhost
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    hostname: sql-server
+    container_name: sql-server
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Pa$$Wor6
+      - MSSQL_PID=Express
+
+  smarthome-service:
+    networks:
+      - localhost
+    build:
+      context: ./SmartHomeService
+      dockerfile: Dockerfile
+    volumes:
+      - ./product:/usr/src/app
+    ports:
+      - "8001:8001"
+    depends_on:
+      sql-server:
+        condition: service_started
+    environment:
+      - WeatherServiceUsername=kochfelix
+      - WeatherServicePassword=vvSS21
+
+  aktor-service:
+    networks:
+      - localhost
+    build:
+      context: ./Aktor
+      dockerfile: Dockerfile
+    volumes:
+      - ./product:/usr/src/app
+    ports:
+      - "3456:3456"
+    depends_on:
+      smarthome-service:
+        condition: service_started
+    environment:
+      - SmartHomeServiceRegistrationURL=http://localhost:8080/aktors/
+      - AktorId=2
+
+  sensor-service:
+    networks:
+      - localhost
+    build:
+      context: ./Sensor
+      dockerfile: Dockerfile
+    volumes:
+      - ./product:/usr/src/app
+    ports:
+      - "3457:3457"
+    depends_on:
+      smarthome-service:
+        condition: service_started
+    environment:
+      - SmartHomeServiceRegistrationURL=http://localhost:8080/sensors/
+      - SmartHomeServicePublishURL=http://localhost:8080/sensors/
+      - SensorId=2
+
+  demoaktor:
+    networks:
+      - localhost
+    image:  ss21vvexercise02/demoaktor:latest
+    container_name: vvss21-demoaktor-livingRoom
+    restart: always
+    ports:
+      - "9212:80"
+      - "4502:443"
+    depends_on:
+      smarthome-service:
+        condition: service_started
+    environment:
+      - AktorId=1
+      - SmartHomeServiceRegistrationURL=http://localhost:9000/api/v1/aktors
+
+  demosensor:
+    networks:
+      - localhost
+    image: ss21vvexercise02/demosensor:latest
+    container_name: vvss21-demosensor-livingRoom
+    restart: always
+    ports:
+      - "9211:80"
+      - "4501:443"
+    depends_on:
+      smarthome-service:
+        condition: service_started
+    environment:
+      - SensorId=1
+      - SmartHomeServiceRegistrationURL=http://localhost:9000/api/v1/sensors
+      - SmartHomeServicePublishURL=http://localhost:9000/api/v1/sensors/1
+networks:
+  localhost:
+    driver: bridge

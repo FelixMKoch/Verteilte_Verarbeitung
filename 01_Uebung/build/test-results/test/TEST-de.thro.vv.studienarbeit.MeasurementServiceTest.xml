@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="de.thro.vv.studienarbeit.MeasurementServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-05-04T18:02:34" hostname="DESKTOP-20L75DO" time="0.162">
+  <properties/>
+  <testcase name="writeFile()" classname="de.thro.vv.studienarbeit.MeasurementServiceTest" time="0.103"/>
+  <testcase name="getFromQueue()" classname="de.thro.vv.studienarbeit.MeasurementServiceTest" time="0.028"/>
+  <testcase name="addToQueue()" classname="de.thro.vv.studienarbeit.MeasurementServiceTest" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.MeasurementService writeMeasurement Measurement aus JSON-String ergab null-Wert!
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.MeasurementService addToQueue Test
+2021-05-04 20:02:34 INFO de.thro.vv.studienarbeit.MeasurementService addToQueue Test
+]]></system-err>
+</testsuite>

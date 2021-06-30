@@ -1,0 +1,6 @@
+include:
+    - local: '/01_Uebung/.gitlab-ci-01.yml'
+    - local: '/02_Uebung/SmartHomeService/.gitlab-ci-02.yml'
+    - local: '/02_Uebung/Sensor/.gitlab-ci-sensor.yml'
+    - local: '/02_Uebung/Aktor/.gitlab-ci-aktor.yml'
+

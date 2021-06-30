@@ -1,0 +1,77 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id "org.sonarqube" version "3.0"
+}
+
+group 'de.thro.vv'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'commons-cli', name: 'commons-cli', version: '1.4'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
+
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
+
+    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.6.28'
+    testImplementation group: 'org.powermock', name: 'powermock-api-mockito2', version: '2.0.9'
+    testImplementation group: 'org.powermock', name: 'powermock-api-mockito', version: '1.7.4'
+
+    implementation group: 'commons-io', name: 'commons-io', version: '2.5'
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "TESTKEY"
+        property "sonar.host.url", "http://localhost:9000"
+        property "sonar.login", "3aa077975cc00cb47a7b89bac8493fe77e8770fb"
+
+        property "sonar.sources", "src/main, build.gradle"
+        property "sonar.coverage.exclusions", "**/*Exception.java,**/migration/Migration*.java,**/*Config.java"
+    }
+}
+
+
+test {
+    useJUnitPlatform()
+
+    jacoco {
+        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+        classDumpDir = file("$buildDir/jacoco/classpathdumps")
+    }
+
+    environment 'PORT', 1024
+    environment 'LOG_LEVEL', 'INFO'
+    environment 'LOG_FILE', 'information'
+    environment 'JSON_FILE', 'json-file'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.enabled false
+    }
+
+
+    getExecutionData().setFrom(fileTree(buildDir).include("/jacoco/*.exec"))
+}
+
+
+jar{
+    manifest {
+        attributes(
+                'Main-Class': 'de.thro.vv.studienarbeit.ReactiveSystem'
+        )
+    }
+    from {
+        configurations.runtimeClasspath.collect{it.isDirectory() ? it : zipTree(it) }
+    }
+}

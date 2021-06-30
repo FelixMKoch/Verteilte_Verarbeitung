@@ -1,0 +1,10 @@
+de/throsenheim/domain/models/Aktor.java
+ de.throsenheim.domain.models.Aktor
+de/throsenheim/presentation/ShutterController.java
+ de.throsenheim.presentation.ShutterController
+de/throsenheim/init/Register.java
+ de.throsenheim.init.Register
+de/throsenheim/Shutter.java
+ de.throsenheim.Shutter
+de/throsenheim/AktorApplication.java
+ de.throsenheim.AktorApplication

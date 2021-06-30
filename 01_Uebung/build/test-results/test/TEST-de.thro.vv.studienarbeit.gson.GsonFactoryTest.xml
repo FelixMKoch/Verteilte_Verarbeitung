@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="de.thro.vv.studienarbeit.gson.GsonFactoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-04T18:02:32" hostname="DESKTOP-20L75DO" time="1.111">
+  <properties/>
+  <testcase name="getMeasurementGson()" classname="de.thro.vv.studienarbeit.gson.GsonFactoryTest" time="1.111"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="de.thro.vv.studienarbeit.server.MultiServerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-04T18:02:34" hostname="DESKTOP-20L75DO" time="2.016">
+  <properties/>
+  <testcase name="running()" classname="de.thro.vv.studienarbeit.server.MultiServerTest" time="2.016"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

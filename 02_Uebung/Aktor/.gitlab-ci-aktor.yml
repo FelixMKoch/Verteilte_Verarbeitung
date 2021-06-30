@@ -1,0 +1,45 @@
+stages:
+  - build
+  - check
+  - dockerize
+
+build-aktor:
+  stage: build
+  image: inf-docker.fh-rosenheim.de/studwinten4338/docker-images/gradle:6.8.3-jdk11
+  script:
+    - echo "compiling and creating deployable artifact"
+    - cd ./02_Uebung/Aktor/
+    - gradle assemble
+  artifacts:
+    paths:
+      - ./02_Uebung/Aktor/build/*
+    expire_in: 1 day
+
+test-aktor:
+  stage: check
+  image: inf-docker.fh-rosenheim.de/studwinten4338/docker-images/gradle:6.8.3-jdk11
+  script:
+    - echo "Running Unit Tests and Static Code analysis"
+    - cd ./02_Uebung/Aktor/
+    - gradle check
+  artifacts:
+    reports:
+      junit:
+        - ./02_Uebung/Aktor/build/test-results/test/TEST-*.xml
+    paths:
+      - ./02_Uebung/Aktor/build/*
+    expire_in: 1 day
+
+docker-aktor:
+  #Official docker image.
+  image: inf-docker.fh-rosenheim.de/studwinten4338/docker-images/docker:latest
+  stage: dockerize
+  services:
+    - name: inf-docker.fh-rosenheim.de/studwinten4338/docker-images/docker:dind
+      alias: docker
+  before_script:
+    - echo $CI_BUILD_TOKEN | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
+  script:
+    - cd ./02_Uebung/Aktor/
+    - docker build --pull -t "$CI_REGISTRY_IMAGE:Aktor" .
+    - docker push "$CI_REGISTRY_IMAGE:Aktor"

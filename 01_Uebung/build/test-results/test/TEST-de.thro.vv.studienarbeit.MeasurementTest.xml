@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="de.thro.vv.studienarbeit.MeasurementTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-05-04T18:02:34" hostname="DESKTOP-20L75DO" time="0.285">
+  <properties/>
+  <testcase name="measurementToString()" classname="de.thro.vv.studienarbeit.MeasurementTest" time="0.003"/>
+  <testcase name="measurementEquals()" classname="de.thro.vv.studienarbeit.MeasurementTest" time="0.181"/>
+  <testcase name="fromJson()" classname="de.thro.vv.studienarbeit.MeasurementTest" time="0.005"/>
+  <testcase name="toJson()" classname="de.thro.vv.studienarbeit.MeasurementTest" time="0.006"/>
+  <testcase name="measurementHashcode()" classname="de.thro.vv.studienarbeit.MeasurementTest" time="0.072"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

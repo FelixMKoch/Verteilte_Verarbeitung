@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="de.thro.vv.studienarbeit.model.MessageTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-05-04T18:02:34" hostname="DESKTOP-20L75DO" time="0.122">
+  <properties/>
+  <testcase name="testInit()" classname="de.thro.vv.studienarbeit.model.MessageTest" time="0.119"/>
+  <testcase name="testHashCode()" classname="de.thro.vv.studienarbeit.model.MessageTest" time="0.0"/>
+  <testcase name="testEquals()" classname="de.thro.vv.studienarbeit.model.MessageTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
