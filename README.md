@@ -21,7 +21,7 @@ Die eigene Smart-Home Steuerung besteht dabei aus mehreren Teilen:
 
 ### Setup
 ``` bash
-git clone "https://inf-git.fh-rosenheim.de/vv-inf-sose21/kochfelix.git"
+git clone "https://github.com/FelixMKoch/Verteilte_Verarbeitung.git"
 ```
 Das Projekt besteht hierbei aus mehreren Bestandteilen, welche unterschiedliche Environment-Variables haben:
 ##### SmartHomeService:
@@ -54,10 +54,6 @@ Beim starten der Docker Container laufen aktuell folgende Sachen auf folgenden P
  - DemoAktor: 9212/4502
  - DemoSensor: 9211/4501
 
-Nachdem man Docker installiert hat: <br/>
-``` bash
-docker run inf-docker.fh-rosenheim.de/vv-inf-sose21/kochfelix
-```
 
 
 ----------------------------------------------
@@ -76,7 +72,7 @@ die gesendeten Daten einlesen, und schlussendlich die erhaltenen Messdaten in ei
 
 ### Setup
 ``` bash
-git clone "https://inf-git.fh-rosenheim.de/vv-inf-sose21/kochfelix.git"
+git clone "https://github.com/FelixMKoch/Verteilte_Verarbeitung.git"
 ```
 Der Server muss dann gestartet werden (SensorStart.java).
 Aber davor noch müssen bestimmte Umgebungsvariablen gesetzt werden:
@@ -95,11 +91,3 @@ Das Measurement Json, welches an den Server gesendet werden sollte, soll so auss
  "timestamp": "2021-04-19T17:39:03.577474300"
 }
 ```
-
-#### Docker - Container
-Das Projekt kann auch über einen Docker-Container lokal zum laufen gebracht werden.
-Nachdem man Docker installiert hat:
-``` bash
-docker run inf-docker.fh-rosenheim.de/vv-inf-sose21/kochfelix
-```
-Der Container dürfte jetzt laufen (Standardmässig auf Port 1024).
